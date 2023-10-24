@@ -11,7 +11,6 @@ dataframes = []
 print(os.listdir(folder_path))
 for filename in os.listdir(folder_path):
     file_path = os.path.join(folder_path, filename)
-
     # Check if the item is a file
     if os.path.isfile(file_path):
         # You can add more file formats if needed (e.g., '.xlsx', '.json', etc.)
