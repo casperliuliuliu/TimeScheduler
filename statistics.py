@@ -36,10 +36,10 @@ left = list(files_with_name.keys())
 def special(str):
     return int(str[8:10])
 left = sorted(left, key=special)
-print(f"Total people: {len(left)}")
-for name in left:
-    print(name)
-print("")
+# print(f"Total people: {len(left)}")
+# for name in left:
+#     print(name)
+# print("")
 
 def add_arrays(names, files_with_name):
     result_data = np.zeros([7,5], dtype=int)
@@ -62,14 +62,126 @@ def check_people(col, row, arrays):
             # print(f"{name}, Row {row}, Column {col} contains 1")
             name_list.append(name)
     return name_list  
-people_in = check_people(4, 0, files_with_name)
-print(f"The Ok person in the phase: {len(people_in)}")
-for name in people_in:
-    print(name)
-print("")
-left = list(set(left) - set(people_in))
-print(left)
 
+def filter_dict_by_keys(input_dict, key_list):
+    return {key: input_dict[key] for key in key_list if key in input_dict}
+
+# for ii in range(5):
+#     for jj in range(7):
+#         left = list(files_with_name.keys())
+#         people_in = check_people(ii, jj, files_with_name)
+#         left = list(set(left) - set(people_in))
+#         temp_dict = filter_dict_by_keys(files_with_name, left)
+#         # print(len(files_with_name))
+#         result_data = add_arrays(left, temp_dict)
+#         if np.any(result_data == len(left)):
+#             print("pick at:", ii, jj)
+#             print("found:", len(left))
+#             result_df = pd.DataFrame(result_data, columns=columns_name)
+#             print(result_df)
+# ii = 1
+# jj = 2
+# left = list(files_with_name.keys())
+# people_in = check_people(ii, jj, files_with_name)
+# left = list(set(left) - set(people_in))
+# temp_dict = filter_dict_by_keys(files_with_name, left)
+# # print(len(files_with_name))
+# result_data = add_arrays(left, temp_dict)
+# if np.any(result_data == len(left)):
+#     print("pick at:", ii, jj)
+#     print("found:", len(left))
+#     result_df = pd.DataFrame(result_data, columns=columns_name)
+#     print(result_df)
+
+        # print(f"\nThe Ok person in the phase: {len(people_in)}")
+# print(people_in)
+# for name in people_in:
+#     print(name)
+# print("")
+# left = list(set(left) - set(people_in))
+# print(len(files_with_name))
+# files_with_name = filter_dict_by_keys(files_with_name, left)
+# # print(left)
+# print(len(files_with_name))
+# result_data = add_arrays(left, files_with_name)
+# result_df = pd.DataFrame(result_data, columns=columns_name)
+# print(result_df)
+
+people_in = check_people(1, 1, files_with_name)
+print(f"\nThe Ok person in the phase: {len(people_in)}")
+left = list(set(left) - set(people_in))
+files_with_name = filter_dict_by_keys(files_with_name, left)
 result_data = add_arrays(left, files_with_name)
 result_df = pd.DataFrame(result_data, columns=columns_name)
 print(result_df)
+
+people_in = check_people(4, 6, files_with_name)
+print(f"\nThe Ok person in the phase: {len(people_in)}")
+left = list(set(left) - set(people_in))
+files_with_name = filter_dict_by_keys(files_with_name, left)
+result_data = add_arrays(left, files_with_name)
+result_df = pd.DataFrame(result_data, columns=columns_name)
+print(result_df)
+print(left)
+# people_in = check_people(1, 6, files_with_name)
+# print(f"\nThe Ok person in the phase: {len(people_in)}")
+# # print(people_in)
+# # for name in people_in:
+# #     print(name)
+# # print("")
+# left = list(set(left) - set(people_in))
+# print(len(files_with_name))
+# files_with_name = filter_dict_by_keys(files_with_name, left)
+# # print(left)
+# print(len(files_with_name))
+# result_data = add_arrays(left, files_with_name)
+# result_df = pd.DataFrame(result_data, columns=columns_name)
+# print(result_df)
+
+# people_in = check_people(2, 2, files_with_name)
+# print(f"\nThe Ok person in the phase: {len(people_in)}")
+# left = list(set(left) - set(people_in))
+# files_with_name = filter_dict_by_keys(files_with_name, left)
+# result_data = add_arrays(left, files_with_name)
+# result_df = pd.DataFrame(result_data, columns=columns_name)
+# print(result_df)
+
+# people_in = check_people(0, 3, files_with_name)
+# print(f"\nThe Ok person in the phase: {len(people_in)}")
+# left = list(set(left) - set(people_in))
+# files_with_name = filter_dict_by_keys(files_with_name, left)
+# result_data = add_arrays(left, files_with_name)
+# result_df = pd.DataFrame(result_data, columns=columns_name)
+# print(result_df)
+
+
+# people_in = check_people(2, 6, files_with_name)
+# print(f"\nThe Ok person in the phase: {len(people_in)}")
+# # print(people_in)
+# # for name in people_in:
+# #     print(name)
+# # print("")
+# left = list(set(left) - set(people_in))
+# print(len(files_with_name))
+# files_with_name = filter_dict_by_keys(files_with_name, left)
+# # print(left)
+# print(len(files_with_name))
+# result_data = add_arrays(left, files_with_name)
+# result_df = pd.DataFrame(result_data, columns=columns_name)
+# print(result_df)
+
+# people_in = check_people(2, 2, files_with_name)
+# print(f"\nThe Ok person in the phase: {len(people_in)}")
+# left = list(set(left) - set(people_in))
+# files_with_name = filter_dict_by_keys(files_with_name, left)
+# result_data = add_arrays(left, files_with_name)
+# result_df = pd.DataFrame(result_data, columns=columns_name)
+# print(result_df)
+
+# people_in = check_people(3, 2, files_with_name)
+# print(f"\nThe Ok person in the phase: {len(people_in)}")
+# left = list(set(left) - set(people_in))
+# files_with_name = filter_dict_by_keys(files_with_name, left)
+# result_data = add_arrays(left, files_with_name)
+# result_df = pd.DataFrame(result_data, columns=columns_name)
+# print(result_df)
