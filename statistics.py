@@ -95,13 +95,13 @@ def filter_dict_by_keys(input_dict, key_list):
 
         # print(f"\nThe Ok person in the phase: {len(people_in)}")
 # print(people_in)
-# for name in people_in:
-#     print(name)
-# print("")
+for name in left:
+    print(name)
+print("")
 # left = list(set(left) - set(people_in))
 # print(len(files_with_name))
 # files_with_name = filter_dict_by_keys(files_with_name, left)
-# # print(left)
+# print(left)
 # print(len(files_with_name))
 # result_data = add_arrays(left, files_with_name)
 # result_df = pd.DataFrame(result_data, columns=columns_name)
@@ -113,7 +113,13 @@ left = list(set(left) - set(people_in))
 files_with_name = filter_dict_by_keys(files_with_name, left)
 result_data = add_arrays(left, files_with_name)
 result_df = pd.DataFrame(result_data, columns=columns_name)
+print("people going at phase 1:")
+people_in = sorted(people_in, key=special)
+for name in people_in:
+    print(name)
+print("")
 print(result_df)
+
 
 people_in = check_people(4, 6, files_with_name)
 print(f"\nThe Ok person in the phase: {len(people_in)}")
@@ -122,6 +128,11 @@ files_with_name = filter_dict_by_keys(files_with_name, left)
 result_data = add_arrays(left, files_with_name)
 result_df = pd.DataFrame(result_data, columns=columns_name)
 print(result_df)
+print("people going at phase 2:")
+people_in = sorted(people_in, key=special)
+for name in people_in:
+    print(name)
+print("")
 print(left)
 # people_in = check_people(1, 6, files_with_name)
 # print(f"\nThe Ok person in the phase: {len(people_in)}")
