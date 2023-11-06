@@ -36,6 +36,7 @@ left = list(files_with_name.keys())
 def special(str):
     return int(str[8:10])
 left = sorted(left, key=special)
+print(left)
 # print(f"Total people: {len(left)}")
 # for name in left:
 #     print(name)
