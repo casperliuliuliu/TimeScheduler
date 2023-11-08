@@ -68,9 +68,13 @@ def sort_dataframe_by_last_two_numbers(df, column_name):
 
 total_df = sort_dataframe_by_last_two_numbers(total_df, 'student_id')
 total_df = total_df.reset_index(drop=True)
+# print(total_df)
 # for ii in range(len(total_df)):
 #     print(total_df[['student_id','name']].loc[ii])
-print(total_df[['phone_number']].to_string(index=False))
+for col in total_df.columns:
+    print(total_df[[col]].to_string(index=False))
+print(total_df[['student_id', 'name']])
+
 print(count_values_in_column(total_df, 'size'))
 
             
