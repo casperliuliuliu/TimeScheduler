@@ -73,7 +73,7 @@ total_df = total_df.reset_index(drop=True)
 #     print(total_df[['student_id','name']].loc[ii])
 for col in total_df.columns:
     print(total_df[[col]].to_string(index=False))
-print(total_df[['student_id', 'name']])
+print(total_df[['student_id', 'name', 'size']])
 
 print(count_values_in_column(total_df, 'size'))
 
